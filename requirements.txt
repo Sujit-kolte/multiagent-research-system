@@ -1,0 +1,25 @@
+# --- Core LangChain (LCEL, Runnables, prompts, parsers) ---
+langchain
+langchain-core
+langchain-community
+
+# --- Mistral integration ---
+langchain-mistralai
+
+# --- Agents (create_react_agent lives in LangGraph) ---
+langgraph
+
+# --- Tool 1: Tavily search ---
+langchain-tavily
+tavily-python
+
+# --- Tool 2: BeautifulSoup scraping ---
+beautifulsoup4
+requests
+lxml
+rich
+
+# --- Config and validation ---
+python-dotenv
+pydantic
+flask
