@@ -11,6 +11,8 @@ app = Flask(__name__)
 
 
 @app.post("/api/research")
+@app.post("/research")
+@app.post("/")
 def research():
     payload = request.get_json(silent=True) or {}
     topic = str(payload.get("topic", "")).strip()
