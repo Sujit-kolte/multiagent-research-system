@@ -40,7 +40,13 @@ function App() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ topic: topic.trim() }),
       });
-      const data = await response.json();
+      const responseText = await response.text();
+      let data = {};
+      try {
+        data = responseText ? JSON.parse(responseText) : {};
+      } catch {
+        throw new Error(`Server returned an invalid response (${response.status}).`);
+      }
       if (!response.ok)
         throw new Error(data.error || "The research run failed.");
       setResult(data);
